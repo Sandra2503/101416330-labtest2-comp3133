@@ -1,0 +1,17 @@
+<div class="mission-list-cards">
+    @for (mission of launches; track $index) {
+      <mat-card (click)="go(mission.flight_number)" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title class="mission-name">{{mission.mission_name}}</mat-card-title>
+            <mat-card-subtitle class="mission-year">{{mission.launch_year}}</mat-card-subtitle>
+            <img mat-card-sm-image src="{{mission.links.mission_patch_small}}" >
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{mission.details}}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  
+  </div>
